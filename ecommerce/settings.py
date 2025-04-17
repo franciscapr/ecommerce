@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Mis apps
     'category',
     'accounts',
+    'store',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,8 @@ STATICFILES_DIRS = [
     'ecommerce/static'
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR /'media'
 
 
 
