@@ -6,10 +6,8 @@
 <section class="section-pagetop bg">
     <div class="container">
         <h2 class="title-page">Nuestra Tienda</h2>
-        
-    </div> <!-- container //  -->
-    </section>
-    <!-- ========================= SECTION INTRO END// ========================= -->
+    </div>
+</section>
 
     <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y">
@@ -39,9 +37,9 @@
                     <li><a href="#">Accesorios </a></li>
                     </ul>
     
-                </div> <!-- card-body.// -->
+                </div>
             </div>
-        </article> <!-- filter-group  .// -->
+        </article>
         <article class="filter-group">
             <header class="card-header">
                 <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
@@ -110,45 +108,44 @@
                             <option value="2000">$2000+</option>
                         </select>
                     </div>
-                    </div> <!-- form-row.// -->
+                    </div>
                     <button class="btn btn-block btn-primary">Buscar</button>
-                </div><!-- card-body.// -->
+                </div>
             </div>
-        </article> <!-- filter-group .// -->
-        
-    </div> <!-- card.// -->
+        </article>
+    </div>
     
-        </aside> <!-- col.// -->
+        </aside>
         <main class="col-md-9">
     
     <header class="border-bottom mb-4 pb-3">
             <div class="form-inline">
-                <span class="mr-md-auto">32 Items Encontrados </span>
-                
+                <span class="mr-md-auto"><b>{{ product_count }}</b> Productos encontrados</span>   
             </div>
-    </header><!-- sect-heading -->
+    </header>
     
     <div class="row">
+        
+        {% for product in products %}
+
         <div class="col-md-4">
             <figure class="card card-product-grid">
                 <div class="img-wrap"> 
-                    
-                    <img src="images/items/1.jpg">
-                    
-                </div> <!-- img-wrap.// -->
+                    <img src="{{ product.images.url }}">
+                </div>
                 <figcaption class="info-wrap">
                     <div class="fix-height">
-                        <a href="./product-detail.html" class="title">Great item name goes here</a>
+                        <a href="./product-detail.html" class="title">{{ product.product_name }}</a>
                         <div class="price-wrap mt-2">
-                            <span class="price">$1280</span>
-                            <del class="price-old">$1980</del>
-                        </div> <!-- price-wrap.// -->
+                            <span class="price">${{ product.price }}</span>
+                        </div>
                     </div>
-                    <a href="#" class="btn btn-block btn-success">Added to cart </a>
+                    <a href="#" class="btn btn-block btn-success">Agregar al carro</a>
                 </figcaption>
             </figure>
-        </div> <!-- col.// -->
-    
+        </div>
+
+        {% endfor %}
 
     </div> <!-- row end.// -->
     
@@ -164,10 +161,8 @@
     </nav>
     
         </main> <!-- col.// -->
-    
     </div>
-    
-    </div> <!-- container .//  -->
+    </div>
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
 
