@@ -2,20 +2,16 @@
 
 {% block content %}
 
-<!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg">
     <div class="container">
-        <h2 class="title-page">Nuestra Tienda</h2>
+        <h2 class="title-page">Categorias</h2>
     </div>
 </section>
 
-    <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y">
-    <div class="container">
-    
+    <div class="container">    
     <div class="row">
         <aside class="col-md-3">
-            
     <div class="card">
         <article class="filter-group">
             <header class="card-header">
@@ -24,7 +20,7 @@
                     <h6 class="title">Categorias</h6>
                 </a>
             </header>
-            <div class="filter-content collapse show" id="collapse_1" style="">
+            <div class="filter-content collapse show" id="collapse_1">
                 <div class="card-body">
                     
                     <ul class="list-menu">
@@ -47,7 +43,7 @@
                     <h6 class="title">Tamanos </h6>
                 </a>
             </header>
-            <div class="filter-content collapse show" id="collapse_4" style="">
+            <div class="filter-content collapse show" id="collapse_4">
                 <div class="card-body">
                   <label class="checkbox-btn">
                     <input type="checkbox">
@@ -68,9 +64,9 @@
                     <input type="checkbox">
                     <span class="btn btn-light"> XXL </span>
                   </label>
-            </div><!-- card-body.// -->
             </div>
-        </article> <!-- filter-group .// -->
+            </div>
+        </article>
         
         <article class="filter-group">
             <header class="card-header">
@@ -79,13 +75,12 @@
                     <h6 class="title">Precios </h6>
                 </a>
             </header>
-            <div class="filter-content collapse show" id="collapse_3" style="">
+            <div class="filter-content collapse show" id="collapse_3">
                 <div class="card-body">
                     
                     <div class="form-row">
                     <div class="form-group col-md-6">
                       <label>Min</label>
-                      <!-- <input class="form-control" placeholder="$0" type="number"> -->
                           <select class="mr-2 form-control">
                             <option value="0">$0</option>
                             <option value="50">$50</option>
@@ -147,8 +142,7 @@
 
         {% endfor %}
 
-    </div> <!-- row end.// -->
-    
+    </div>    
     
     <nav class="mt-4" aria-label="Page navigation sample">
       <ul class="pagination">
@@ -160,11 +154,9 @@
       </ul>
     </nav>
     
-        </main> <!-- col.// -->
+</main>
     </div>
     </div>
     </section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
-
 
 {% endblock %}
