@@ -29,22 +29,26 @@
         <div class="col-lg-2 col-md-3 col-6">
             <a href="./" class="brand-wrap">
                 <img class="logo" src="{% static './images/NutrIA.png' %}">
-            </a> <!-- brand-wrap.// -->
+            </a>
         </div>
+        
         <div class="col-lg col-sm col-md col-6 flex-grow-0">
             <div class="category-wrap dropdown d-inline-block float-right">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
                     <i class="fa fa-bars"></i> Categorias 
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Electronica / Tv, Audio </a>
-                    <a class="dropdown-item" href="#">Auto / Transporte</a>
-                    <a class="dropdown-item" href="#">Ropa Moda / Textiles </a>
-                    <a class="dropdown-item" href="#">Casa & Jardin / Construccion / Luces </a>
-                    <a class="dropdown-item" href="#">Computadoras / Telefonos </a> 
+
+                    {% for category in links %}
+                    <a class="dropdown-item" href="#">{{ category.category_name }}</a>
+                     {% endfor %}
+            
                 </div>
-            </div>  <!-- category-wrap.// -->
-        </div> <!-- col.// -->
+            </div>
+        </div>
+
+
+
         <a href="./store.html" class="btn btn-outline-primary">Tienda</a>
         <div class="col-lg  col-md-6 col-sm-12 col">
             <form action="#" class="search">
@@ -76,6 +80,5 @@
                 </div> <!-- col.// -->
     </div> <!-- row.// -->
         </div> <!-- container.// -->
-    </section> <!-- header-main .// -->
-    
-   </header> <!-- section-header.// -->
+    </section>
+   </header>
