@@ -16,7 +16,8 @@
     </article>
             </aside>
             <main class="col-md-6 border-left">
-            <form action="{% url 'add_cart' single_product.id %}" method="GET" class=""></form>
+            <form action="{% url 'add_cart' single_product.id %}" method="POST" class="">
+              {% csrf_token %}
 
 
     <article class="content-body">
@@ -36,7 +37,7 @@
                 <select name="color" class="form-control" required>
                   <option value="" disabled selected>Seleccione</option>
                   {% for i in single_product.variation_set.colors %}
-                  <option value="{{ i.variation.value | lower }}">{{ i.variation_value | capfirst }}</option>
+                  <option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
                   {% endfor %}
                 </select>
             </div>
@@ -48,7 +49,7 @@
                 <select name="talla" class="form-control" required>
                   <option value="" disabled selected>Seleccione</option>
                   {% for i in single_product.variation_set.tallas %}
-                  <option value="{{ i.variation.value | lower }}">{{ i.variation_value | capfirst }}</option>
+                  <option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
                   {% endfor %}
                 </select>
               </div>
@@ -65,11 +66,12 @@
         <a href="{% url 'cart' %}" class="btn btn-outline-primary"><span class="text">Ver carrito de compras</span><i class="fas fa-eye"></i></a>
         
         {% else %}
-          <button type="submit" class="btn  btn-primary"><span class="text">Agregar al shopping cart</span><i class="fas fa-shopping-cart"></i></button>
+          <button type="submit" class="btn btn-primary"><span class="text">Agregar al shopping cart</span><i class="fas fa-shopping-cart"></i></button>
           {% endif %}
         {% endif %}
           
         </article>
+      </form>
             </main>
         </div>
     </div>
