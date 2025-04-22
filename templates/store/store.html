@@ -122,8 +122,8 @@
     
     <div class="row">
         
+        {% if products %}
         {% for product in products %}
-
         <div class="col-md-4">
             <figure class="card card-product-grid">
                 <div class="img-wrap"> 
@@ -140,9 +140,14 @@
                 </figcaption>
             </figure>
         </div>
-
         {% endfor %}
+        {% else %}
 
+        <div>
+            <h2>No se encontraron resultados.</h2>
+        </div>
+
+        {% endif %}
     </div>    
     
     <nav class="mt-4" aria-label="Page navigation sample">
