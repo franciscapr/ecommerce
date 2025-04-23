@@ -5,6 +5,17 @@
 
 <section class="section-conten padding-y" style="min-height:84vh">
 
+    {% if request.GET.command == 'verification' %}
+        <div class="container mx-auto alert alert-info" role="alert" style="max-width=380px; margin-top=100px;">
+            Muchas gracias por registrarte en nuestro portal Ecommerce, te hemos enviado un email con el link para confirmar tu cuento [{{ request.GET.email }}]
+            <br>
+            <br>
+            Si ya verificaste tu cuenta, puedes iniciar sesiòn <a href="{% url 'login' %}">Login</a>
+        </div>
+
+        {% else %}
+
+
         <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
             {% include 'includes/alerts.html' %}
 
@@ -36,6 +47,9 @@
          <p class="text-center mt-4">No tienes una cuenta? <a href="{% url 'register' %}">Registrate</a></p>
          <br><br>    
     
+        {% endif %}
+
+
     </section>
 
 
