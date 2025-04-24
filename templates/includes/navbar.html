@@ -84,7 +84,7 @@
                             <div class="widget-header">
                                 <small class="title text-muted">Bienvenido {{ user.first_name | capfirst }}!</small>
                                 <div> 
-                                    <a href="#">Dashboard</a><span class="dark-transp"> | </span>
+                                    <a href="{% url 'dashboard' %}">Dashboard</a><span class="dark-transp"> | </span>
                                     <a href="{% url 'logout' %}">Cerrar Sesion</a>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                             <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
                             <span class="badge badge-pill badge-danger notify">{{ cart_count }}</span>
                         </a>
-                    </div> <!-- widgets-wrap.// -->
+                    </div>
                 </div> <!-- col.// -->
     </div>
         </div>
