@@ -20,6 +20,14 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+    
+
+class ProductGallery(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='gallery')
+    image = models.ImageField(upload_to='photos/products/gallery', blank=True)
+
+    def __str__(self):
+        return self.product.product_name
 
 
 
@@ -29,11 +37,18 @@ class VariationManager(models.Manager):
 
     def tallas(self):
         return super(VariationManager, self).filter(variation_category='talla', is_active=True)
+    
+    def numero(self):
+        return super(VariationManager, self).filter(variation_category='numero', is_active=True)
 
+    def tipo(self):
+        return super(VariationManager, self).filter(variation_category='tipo', is_active=True)
 
 variation_category_choice = (
     ('color', 'color'),
     ('talla', 'talla'),
+    ('numero', 'numero'),
+    ('tipo', 'tipo'),
 )
 
 class Variation(models.Model):
